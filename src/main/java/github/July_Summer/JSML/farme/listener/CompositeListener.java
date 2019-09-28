@@ -6,9 +6,10 @@ import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
 
 import github.July_Summer.JSML.farme.MainFarme;
-import github.July_Summer.JSML.farme.Composite.InfoComposite;
-import github.July_Summer.JSML.farme.Composite.TrimComposite;
+import github.July_Summer.JSML.farme.composite.InfoComposite;
+import github.July_Summer.JSML.farme.composite.TrimComposite;
 import github.July_Summer.JSML.farme.util.FarmeUtil;
+import github.July_Summer.JSML.thread.FarmeThread.FarmeThread;
 
 
 public class CompositeListener implements Listener{
@@ -16,16 +17,18 @@ public class CompositeListener implements Listener{
 	private int startX, startY;
 
 	public void handleEvent(Event event) {
-		if(event.type == SWT.MouseDown  && event.button == 1) {
-			startX = event.x;
-			startY = event.y;
-		}
-		if(event.type == SWT.MouseMove && (event.stateMask & SWT.BUTTON1) != 0) {
-		    Point p = MainFarme.shell.toDisplay(event.x, event.y);  
-	        p.x -= startX;  
-	        p.y -= startY;
-	        MainFarme.shell.setLocation(p);
-		}
+	        MainFarme.display.asyncExec(() -> {
+	    		if(event.type == SWT.MouseDown  && event.button == 1) {
+	    			startX = event.x;
+	    			startY = event.y;
+	    		}
+	    		if(event.type == SWT.MouseMove && (event.stateMask & SWT.BUTTON1) != 0) {
+	    		    Point p = MainFarme.shell.toDisplay(event.x, event.y);  
+	    	        p.x -= startX;
+	    	        p.y -= startY;
+	    		    MainFarme.shell.setLocation(p);
+	    		}
+	        });
 	}
 	
 	public static void registerListener() {

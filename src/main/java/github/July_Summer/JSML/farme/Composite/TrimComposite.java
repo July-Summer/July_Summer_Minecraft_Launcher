@@ -1,4 +1,4 @@
-package github.July_Summer.JSML.farme.Composite;
+package github.July_Summer.JSML.farme.composite;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
@@ -29,7 +29,7 @@ public class TrimComposite {
 		label_title.setLocation(38, 3);
 		label_title.setSize(656, 32);
 		label_title.setText(MainFarme.TITLE);
-		label_title.setFont(new Font(MainFarme.display, "ËÎÌå", 16, SWT.None));
+		label_title.setFont(new Font(MainFarme.display, "ï¿½ï¿½ï¿½ï¿½", 16, SWT.None));
 	    label_title.setForeground(new Color(MainFarme.display, 240, 255 ,255));
 		label_title.setBackground(MainFarme.color);
 		
@@ -49,7 +49,7 @@ public class TrimComposite {
 		label_hide.setBackground(MainFarme.color);
 		label_hide.setForeground(new Color(MainFarme.display, 76, 100, 111));
 		label_hide.setText("-");
-		label_hide.setFont(new Font(MainFarme.display, "ËÎÌå", 38, SWT.None));
+		label_hide.setFont(new Font(MainFarme.display, "ï¿½ï¿½ï¿½ï¿½", 38, SWT.None));
 		HideListener.registerListener();
 	}
 	

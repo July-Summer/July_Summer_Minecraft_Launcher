@@ -6,7 +6,7 @@ import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
 
 import github.July_Summer.JSML.farme.MainFarme;
-import github.July_Summer.JSML.farme.Composite.TrimComposite;
+import github.July_Summer.JSML.farme.composite.TrimComposite;
 
 public class CloseButtonListener implements Listener{
 

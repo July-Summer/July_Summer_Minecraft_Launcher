@@ -7,7 +7,7 @@ import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
 
 import github.July_Summer.JSML.farme.MainFarme;
-import github.July_Summer.JSML.farme.Composite.InfoComposite;
+import github.July_Summer.JSML.farme.composite.InfoComposite;
 import github.July_Summer.JSML.thread.ThreadManager;
 import github.July_Summer.JSML.thread.FarmeThread.FarmeThread;
 
@@ -16,6 +16,7 @@ public class CloseMainFarmeListener implements ShellListener{
 	@Override
 	public void shellClosed(ShellEvent arg0) {
 		ThreadManager.farmeExecutors.shutdown();
+		FarmeThread.whileExecutors.shutdown();
 	}
 	
 	@Override

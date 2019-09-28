@@ -9,6 +9,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+//高斯模糊算法 来源于网络
 public class GaussianBlurUtil {
 	
 	public static byte[] blur(byte[] data, int radius) throws IOException {

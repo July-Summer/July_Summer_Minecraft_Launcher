@@ -1,10 +1,12 @@
-package github.July_Summer.JSML.farme.Composite;
+package github.July_Summer.JSML.farme.composite;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.events.MouseListener;
 import org.eclipse.swt.events.PaintEvent;
 import org.eclipse.swt.events.PaintListener;
+import org.eclipse.swt.graphics.GC;
+import org.eclipse.swt.graphics.GCData;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
@@ -26,13 +28,13 @@ public class MainComposite {
 		mainComposite.setSize(754, 424);
 		mainComposite.setBackgroundImage(ImageManager.backgroundImage);
 		
-		label_launcher.setLocation(0, 345);
+		label_launcher.setLocation(0, 350);
 		label_launcher.setSize(0, 56);
-		
+		mainComposite.setBackgroundMode(SWT.TRANSPARENT);
 		
 		FarmeThread.builder(() -> {
-			MainFarme.display.syncExec(() -> {
-				FarmeUtil.leftMove(label_launcher, 568, 168, 1);
+			MainFarme.display.asyncExec(() -> {
+				FarmeUtil.leftMove(label_launcher, 575, 160, 1);
 			});
 		}).exec();
 		

@@ -1,9 +1,10 @@
-package github.July_Summer.JSML.farme.Composite;
+package github.July_Summer.JSML.farme.composite;
 
 import java.io.ObjectStreamClass;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.graphics.ImageData;
 import org.eclipse.swt.internal.win32.OS;
 import org.eclipse.swt.internal.win32.TCHAR;
 import org.eclipse.swt.widgets.Composite;
@@ -28,13 +29,17 @@ public class InfoComposite {
 		FarmeThread.builder(() -> {
 			Image image = ImageManager.blur(ImageManager.backgroundImage, 10);
 
-	    	MainFarme.display.syncExec(() -> {
+	    	MainFarme.display.asyncExec(() -> {
 	    		infoComposite.setBackgroundImage(image);
 	        	FarmeUtil.disappearRight(infoComposite, 200, 1);
 	    	});
 	    	
 		}
-	    	).exec();
+	    	).successRunnable(() -> {
+	    		infoComposite.getBackgroundImage().getImageData().alpha = 2;
+	    		System.out.print(infoComposite.getBackgroundImage().getImageData().alpha);
+	    	}).exec();
+	    
 	}
 
 }

@@ -14,9 +14,9 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Shell;
 
-import github.July_Summer.JSML.farme.Composite.InfoComposite;
-import github.July_Summer.JSML.farme.Composite.MainComposite;
-import github.July_Summer.JSML.farme.Composite.TrimComposite;
+import github.July_Summer.JSML.farme.composite.InfoComposite;
+import github.July_Summer.JSML.farme.composite.MainComposite;
+import github.July_Summer.JSML.farme.composite.TrimComposite;
 import github.July_Summer.JSML.farme.listener.CloseButtonListener;
 import github.July_Summer.JSML.farme.listener.CloseMainFarmeListener;
 import github.July_Summer.JSML.farme.listener.CompositeListener;
